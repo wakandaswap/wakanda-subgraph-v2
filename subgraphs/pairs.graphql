@@ -33,7 +33,7 @@ type _Schema_
   )
 
 """
-PancakeSwap Factory
+WakandaSwap Factory
 """
 type Factory @entity {
   "ID (address)"
@@ -47,7 +47,7 @@ type Factory @entity {
 }
 
 """
-PancakeSwap Pairs (Pancake LPs - Cake-LP)
+WakandaSwap Pairs (Wakanda LPs - Cake-LP)
 """
 type Pair @entity {
   "ID (address)"
@@ -70,7 +70,7 @@ type Pair @entity {
 }
 
 """
-PancakeSwap Tokens
+WakandaSwap Tokens
 """
 type Token @entity {
   "ID (address)"

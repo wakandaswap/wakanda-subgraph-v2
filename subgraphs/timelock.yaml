@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: PancakeSwap Timelock contract
-repository: https://github.com/pancakeswap
+description: WakandaSwap Timelock contract
+repository: https://github.com/wakandaswap
 schema:
   file: ./timelock.graphql
 dataSources:

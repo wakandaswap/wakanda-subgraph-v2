@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Pancake Profile
-repository: https://github.com/pancakeswap
+description: Wakanda Profile
+repository: https://github.com/wakandaswap
 schema:
   file: ./profile.graphql
 dataSources:

@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_pancakeProfileAddress",
+        "name": "_wakandaProfileAddress",
         "type": "address"
       },
       {
@@ -260,10 +260,10 @@
   },
   {
     "inputs": [],
-    "name": "pancakeProfile",
+    "name": "wakandaProfile",
     "outputs": [
       {
-        "internalType": "contract IPancakeProfile",
+        "internalType": "contract IWakandaProfile",
         "name": "",
         "type": "address"
       }

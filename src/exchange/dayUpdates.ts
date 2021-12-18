@@ -1,31 +1,31 @@
 /* eslint-disable prefer-const */
 import { PairHourData } from "../../generated/schema";
 import { BigInt, BigDecimal, ethereum } from "@graphprotocol/graph-ts";
-import { Pair, Bundle, Token, PancakeFactory, PancakeDayData, PairDayData, TokenDayData } from "../../generated/schema";
+import { Pair, Bundle, Token, WakandaFactory, WakandaDayData, PairDayData, TokenDayData } from "../../generated/schema";
 import { ONE_BI, ZERO_BD, ZERO_BI, FACTORY_ADDRESS } from "./utils";
 
-export function updatePancakeDayData(event: ethereum.Event): PancakeDayData {
-  let pancake = PancakeFactory.load(FACTORY_ADDRESS);
+export function updateWakandaDayData(event: ethereum.Event): WakandaDayData {
+  let wakanda = WakandaFactory.load(FACTORY_ADDRESS);
   let timestamp = event.block.timestamp.toI32();
   let dayID = timestamp / 86400;
   let dayStartTimestamp = dayID * 86400;
 
-  let pancakeDayData = PancakeDayData.load(dayID.toString());
-  if (pancakeDayData === null) {
-    pancakeDayData = new PancakeDayData(dayID.toString());
-    pancakeDayData.date = dayStartTimestamp;
-    pancakeDayData.dailyVolumeUSD = ZERO_BD;
-    pancakeDayData.dailyVolumeBNB = ZERO_BD;
-    pancakeDayData.totalVolumeUSD = ZERO_BD;
-    pancakeDayData.totalVolumeBNB = ZERO_BD;
-    pancakeDayData.dailyVolumeUntracked = ZERO_BD;
+  let wakandaDayData = WakandaDayData.load(dayID.toString());
+  if (wakandaDayData === null) {
+    wakandaDayData = new WakandaDayData(dayID.toString());
+    wakandaDayData.date = dayStartTimestamp;
+    wakandaDayData.dailyVolumeUSD = ZERO_BD;
+    wakandaDayData.dailyVolumeBNB = ZERO_BD;
+    wakandaDayData.totalVolumeUSD = ZERO_BD;
+    wakandaDayData.totalVolumeBNB = ZERO_BD;
+    wakandaDayData.dailyVolumeUntracked = ZERO_BD;
   }
-  pancakeDayData.totalLiquidityUSD = pancake.totalLiquidityUSD;
-  pancakeDayData.totalLiquidityBNB = pancake.totalLiquidityBNB;
-  pancakeDayData.totalTransactions = pancake.totalTransactions;
-  pancakeDayData.save();
+  wakandaDayData.totalLiquidityUSD = wakanda.totalLiquidityUSD;
+  wakandaDayData.totalLiquidityBNB = wakanda.totalLiquidityBNB;
+  wakandaDayData.totalTransactions = wakanda.totalTransactions;
+  wakandaDayData.save();
 
-  return pancakeDayData as PancakeDayData;
+  return wakandaDayData as WakandaDayData;
 }
 
 export function updatePairDayData(event: ethereum.Event): PairDayData {

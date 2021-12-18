@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Pancake Prediction
-repository: https://github.com/pancakeswap
+description: Wakanda Prediction
+repository: https://github.com/wakandaswap
 schema:
   file: ./prediction.graphql
 dataSources:
